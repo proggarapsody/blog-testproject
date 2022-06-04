@@ -3,16 +3,20 @@ import { usePosts } from '../PostsProvider';
 import styles from './post-form.module.scss';
 import { v4 as uuidv4 } from 'uuid';
 import { useNavigate } from 'react-router-dom';
+import Confirm from '../common/Confirm/Confirm';
 
 const EditPostForm = ({ posts, setPosts, post }) => {
   const [formState, setFormState] = useState({ ...post });
   const navigate = useNavigate();
+  // state for handle open confirm dialog before deleting of the post
+  const [active, setActive] = useState(false);
 
   // function handle all changes in form
   const onFormChange = (e) => {
     const { name, value } = e.target;
     setFormState({ ...formState, [name]: value ? value.trim() : '' });
   };
+
   // function handle form submit and edit current post
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -21,10 +25,27 @@ const EditPostForm = ({ posts, setPosts, post }) => {
     posts[index] = formState;
     setPosts([...posts]);
   };
+
   // function delete post from all posts list and redirect to main page
   const deletePost = () => {
+    setActive(false);
     setPosts(posts.filter((el) => el.id != post.id));
     navigate('/');
+  };
+
+  const handleDeleteBtn = () => {
+    setActive(true);
+  };
+
+  // function that run when user click YES on the confirm deleting dialog
+  const onConfirm = () => {
+    setActive(false);
+    deletePost();
+  };
+
+  // function that run when user click NO on the confirm deleting dialog
+  const onReject = () => {
+    setActive(false);
   };
 
   return (
@@ -51,7 +72,7 @@ const EditPostForm = ({ posts, setPosts, post }) => {
         <button
           className={styles.deletePostBtn + ' secondary-button'}
           type="button"
-          onClick={deletePost}
+          onClick={handleDeleteBtn}
         >
           Удалить
         </button>
@@ -62,6 +83,12 @@ const EditPostForm = ({ posts, setPosts, post }) => {
           Сохранить
         </button>
       </div>
+      <Confirm
+        active={active}
+        setActive={setActive}
+        onConfirm={onConfirm}
+        onReject={onReject}
+      />
     </form>
   );
 };

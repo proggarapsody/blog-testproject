@@ -1,0 +1,23 @@
+.confirm {
+  width: 300px;
+  height: fit-content;
+  min-width: 0;
+  min-height: 0;
+}
+
+.confirmContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  align-items: center;
+  justify-content: center;
+}
+
+.confirmBtns {
+  display: flex;
+  gap: 20px;
+
+  & button {
+    width: 90px;
+  }
+}
