@@ -20,11 +20,11 @@
   border: 1px solid var(--post-border-color);
   background-color: var(--post-bg-color);
   overflow: hidden;
-  height: 140px;
 
   &Text {
     overflow: hidden;
     text-overflow: ellipsis;
+    height: 140px;
 
     &::first-letter {
       text-transform: uppercase;
