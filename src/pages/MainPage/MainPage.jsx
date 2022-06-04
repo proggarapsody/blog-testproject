@@ -1,5 +1,6 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import Modal from '../../components/common/Modal/Modal';
+import NewPostForm from '../../components/NewPostForm/NewPostForm';
 import PostsList from '../../components/PostsList/PostsList';
 import styles from './mainpage.module.scss';
 
@@ -18,7 +19,9 @@ const MainPage = () => {
       </div>
 
       <PostsList />
-      <Modal active={isModalActive} setActive={setIsModalActive}></Modal>
+      <Modal active={isModalActive} setActive={setIsModalActive}>
+        <NewPostForm handleClose={setIsModalActive} />
+      </Modal>
     </div>
   );
 };
