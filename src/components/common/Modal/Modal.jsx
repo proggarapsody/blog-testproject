@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import './modal.scss';
 import { createPortal } from 'react-dom';
-
+// modal component which render in react portal
 const Modal = ({ active, setActive, children, className }) => {
   return createPortal(
     (

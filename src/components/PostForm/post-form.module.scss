@@ -1,4 +1,5 @@
-.newPostForm {
+.newPostForm,
+.editPostForm {
   display: flex;
   flex-direction: column;
   gap: 40px;
@@ -27,10 +28,18 @@
   }
 }
 
-.closeFormBtn {
+.closeFormBtn,
+.formSubmitBtn,
+.deletePostBtn,
+.editPostBtn {
   width: 130px;
 }
 
-.formSubmitBtn {
-  width: 130px;
+.editPostForm {
+  padding: 0;
+  &Btns {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
 }

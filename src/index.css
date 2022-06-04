@@ -36,8 +36,9 @@ code {
   --post-border-color: #000000;
   --post-text-color: #000000;
 
-  --delete-btn-bg-color: #F7CECC;
-  --delete-btn-border-color: #D3B2B5;
+  --secondary-btn-bg-color: #F7CECC;
+  --secondary-btn-bg-color-hover: #f8c5c3;
+  --secondary-btn-border-color: #D3B2B5;
 
   --primary-btn-bg-color: #D9E8FB;
   --primary-btn-bg-color-hover: #cee4ff;
@@ -46,21 +47,34 @@ code {
 
 button {
   outline: none;
-
-  border: 1px solid var(--primary-btn-border-color);
   box-shadow: none;
-  background: var(--primary-btn-bg-color);
   padding: 5px;
   border-radius: 3px;
   cursor: pointer;
 
-
 }
 
-button:hover {
+
+
+.primary-button {
+  background: var(--primary-btn-bg-color);
+  padding: 5px;
+  border: 1px solid var(--primary-btn-border-color);
+}
+
+.primary-button:hover {
   background: var(--primary-btn-bg-color-hover);
 }
 
+.secondary-button {
+  background: var(--secondary-btn-bg-color);
+  padding: 5px;
+  border: 1px solid var(--secondary-btn-border-color);
+}
+
+.secondary-button:hover {
+  background: var(--secondary-btn-bg-color-hover);
+}
 
 a,
 a:hover {

@@ -10,7 +10,7 @@ const Post = ({ id, title, body }) => {
         <p className={styles.postBodyText}>{body}</p>
       </div>
 
-      <Link className={styles.postBtn} to={`post/:${id}`}>
+      <Link className={styles.postBtn + ' primary-button'} to={`post/:${id}`}>
         перейти
       </Link>
     </div>

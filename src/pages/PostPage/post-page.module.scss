@@ -1,0 +1,15 @@
+.postPage {
+  margin: 30px 0px;
+  &Title {
+    margin-top: 50px;
+    margin-bottom: 30px;
+  }
+}
+
+.backBtn {
+  display: block;
+  width: 150px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
