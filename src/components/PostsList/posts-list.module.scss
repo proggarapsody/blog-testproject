@@ -1,0 +1,13 @@
+.postsList {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 60px;
+  align-items: center;
+}
+
+@media (max-width: 1200px) {
+  .postsList {
+    justify-content: center;
+  }
+}

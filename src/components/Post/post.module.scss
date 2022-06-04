@@ -1,0 +1,50 @@
+.postContainer {
+  color: var(--post-text-color);
+  width: 320px;
+}
+
+.postTitle {
+  text-align: center;
+  width: 50%;
+  margin: 0 auto;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  &::first-letter {
+    text-transform: uppercase;
+  }
+}
+
+.postBody {
+  padding: 10px 11px;
+  border: 1px solid var(--post-border-color);
+  background-color: var(--post-bg-color);
+  overflow: hidden;
+  height: 140px;
+
+  &Text {
+    overflow: hidden;
+    text-overflow: ellipsis;
+
+    &::first-letter {
+      text-transform: uppercase;
+    }
+  }
+}
+
+.postBtn {
+  margin-top: 7px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  border: 2px solid var(--primary-btn-border-color);
+  box-shadow: none;
+  background: var(--primary-btn-bg-color);
+  padding: 4px;
+  border-radius: 3px;
+
+  &:hover {
+    background: var(--primary-btn-bg-color-hover);
+  }
+}

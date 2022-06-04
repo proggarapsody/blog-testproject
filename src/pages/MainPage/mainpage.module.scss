@@ -1,0 +1,23 @@
+.mainPage {
+  margin-top: 60px;
+  &Header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 60px;
+    gap: 40px;
+  }
+}
+
+.mainPageTitle {
+  text-align: center;
+}
+
+.mainPageAddBtn {
+  padding: 7px;
+  width: 180px;
+  &:hover {
+    background: var(--primary-btn-bg-color-hover);
+  }
+}
