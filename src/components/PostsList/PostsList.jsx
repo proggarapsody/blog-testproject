@@ -1,19 +1,12 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useReducer, useState } from 'react';
+
 import Post from '../Post/Post';
+import { usePosts } from '../PostsProvider';
 import styles from './posts-list.module.scss';
 
 const PostsList = () => {
-  const [posts, setPosts] = useState([]);
+  const [posts, setPosts] = usePosts();
 
-  useEffect(() => {
-    async function fetchData() {
-      const data = await fetch(
-        'https://jsonplaceholder.typicode.com/posts'
-      ).then((res) => res.json());
-      setPosts(data);
-    }
-    fetchData();
-  }, []);
   return (
     <div className={styles.postsList}>
       {posts.map((post) => (

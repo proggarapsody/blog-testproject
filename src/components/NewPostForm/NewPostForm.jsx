@@ -1,8 +1,10 @@
 import React, { useState } from 'react';
+import { usePosts } from '../PostsProvider';
 import styles from './newpost-form.module.scss';
 
 const NewPostForm = ({ handleClose }) => {
   const [formState, setFormState] = useState({});
+  const [posts, setPosts] = usePosts();
 
   const onFormChange = (e) => {
     const { name, value } = e.target;
@@ -11,7 +13,10 @@ const NewPostForm = ({ handleClose }) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    posts.unshift(formState);
+    setPosts([...posts]);
   };
+
   return (
     <form onSubmit={handleSubmit} className={styles.newPostForm}>
       <input
