@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { usePosts } from '../PostsProvider';
 import styles from './newpost-form.module.scss';
+import { v4 as uuidv4 } from 'uuid';
 
 const NewPostForm = ({ handleClose }) => {
   const [formState, setFormState] = useState({});
@@ -13,7 +14,7 @@ const NewPostForm = ({ handleClose }) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    posts.unshift(formState);
+    posts.unshift({ ...formState, id: uuidv4() });
     setPosts([...posts]);
   };
 
