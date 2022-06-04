@@ -29,6 +29,7 @@ code {
 :root {
   --background-color: #F5F5F5;
   --text-color: #000000;
+  --border-color: #000000;
 
   --post-bg-color: #ffffff;
   --post-border-color: #000000;

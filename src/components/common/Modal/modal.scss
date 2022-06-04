@@ -1,0 +1,53 @@
+.modal {
+  position: fixed;
+  top: 0;
+  right: 0;
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+  opacity: 0;
+  pointer-events: none;
+  transition: 0.4s;
+  background-color: #21212139;
+  z-index: 10;
+}
+
+.modal.active {
+  opacity: 1;
+  pointer-events: all;
+  transition: 0.4s;
+}
+
+.modal__content {
+  border-radius: 2px;
+  border: 1px solid var(--border-color);
+  background-color: var(--background-color);
+  z-index: 2;
+  width: 70vw;
+  max-height: 80vh;
+
+  transition: 0.4s;
+  position: relative;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0);
+
+  padding: 20px 15px;
+}
+
+.modal__content.active {
+  transform: translate(-50%, -50%) scale(1);
+  transition: 0.4s;
+}
+
+.newPostModal {
+  max-width: 40vw;
+  overflow: hidden;
+  height: 80vh;
+  & textarea {
+    padding: 5px 10px;
+    min-height: 350px;
+    border: 1px solid #959595a3;
+    border-radius: 15px;
+  }
+}
