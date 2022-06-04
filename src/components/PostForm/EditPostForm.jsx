@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
-import { usePosts } from '../PostsProvider';
+
 import styles from './post-form.module.scss';
-import { v4 as uuidv4 } from 'uuid';
+
 import { useNavigate } from 'react-router-dom';
 import Confirm from '../common/Confirm/Confirm';
 
@@ -21,7 +21,7 @@ const EditPostForm = ({ posts, setPosts, post }) => {
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log(formState);
-    const index = posts.findIndex((el) => el.id == post.id);
+    const index = posts.findIndex((el) => el.id === post.id);
     posts[index] = formState;
     setPosts([...posts]);
   };
@@ -29,7 +29,7 @@ const EditPostForm = ({ posts, setPosts, post }) => {
   // function delete post from all posts list and redirect to main page
   const deletePost = () => {
     setActive(false);
-    setPosts(posts.filter((el) => el.id != post.id));
+    setPosts(posts.filter((el) => el.id !== post.id));
     navigate('/');
   };
 

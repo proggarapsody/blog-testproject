@@ -10,7 +10,7 @@ const PostPage = () => {
   const [posts, setPosts] = usePosts();
   // find post in array of all posts with id equal to params
   // after this edit param
-  const post = posts.find((el) => el.id == id.replace(':', ''));
+  const post = posts.find((el) => el.id === id.replace(':', ''));
 
   return (
     <div className={styles.postPage}>
